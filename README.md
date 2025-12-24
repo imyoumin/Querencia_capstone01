@@ -46,22 +46,10 @@
 ---
 
 ## 🎥 프로토타입 시연 영상 (Prototype Demo Videos)
+> GitHub README는 환경에 따라 mp4 인라인 재생이 제한될 수 있어, 아래처럼 **파일 링크**로 제공합니다.
 
-<div align="center">
-  <video src="image/3-1프로토타입ver1 시연영상.mp4" controls width="720"></video>
-  <br/><br/>
-  <video src="image/3-2프로토타입ver2시연영상.mp4" controls width="720"></video>
-</div>
-
-<p>
-<b>Prototype v1</b>: <code>image/3-1프로토타입ver1 시연영상.mp4</code><br/>
-<b>Prototype v2</b>: <code>image/3-2프로토타입ver2시연영상.mp4</code>
-</p>
-
-<blockquote>
-※ GitHub README에서는 브라우저/플랫폼에 따라 video 태그가 정상 재생되지 않을 수 있습니다.  
-그 경우 <code>image/</code> 폴더에서 영상을 직접 다운로드하여 확인해주세요.
-</blockquote>
+- **Prototype v1**: <a href="image/3-1프로토타입ver1%20시연영상.mp4">3-1프로토타입ver1 시연영상.mp4</a>  
+- **Prototype v2**: <a href="image/3-2프로토타입ver2시연영상.mp4">3-2프로토타입ver2시연영상.mp4</a>
 
 ---
 
@@ -107,7 +95,7 @@ AR 신발 착화 기능은 **Snap Lens Studio**에서 제공하는 **Foot Tracki
 <pre><code>Querencia_capstone01/
 ├─ ar_wrapper/                 # AR 착화 웹 (Adidas Samba 6종 모델 착화)
 ├─ shoe_wear_exhibition/       # 마모도 측정 FastAPI 서버 (GroundingDINO + SAM 전처리 + 마모도 모델 추론)
-├─ image/                      # README용 이미지/스크린샷/프로토타입 시연영상
+├─ image/                      # README용 이미지/스크린샷/프로토타입 영상
 ├─ Project Proposal.pdf        # 프로젝트 제안서
 ├─ Project Manual.pdf          # 프로젝트 매뉴얼
 ├─ Final Project Report.pdf    # 프로젝트 최종 보고서
