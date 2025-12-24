@@ -1,4 +1,4 @@
-<!-- =========================
+<img width="781" height="677" alt="캐릭터" src="https://github.com/user-attachments/assets/0a31fb96-8301-4a84-a6b5-b03b1f42286d" /><!-- =========================
      Kerencia / Wear Lab README
      ========================= -->
 
@@ -45,19 +45,19 @@
 
 ## 🖼️ 스크린샷 / 전시 사진
 <div align="center">
-  <img src="image/IMG_1664.jpg" width="330" />
-  <img src="image/IMG_1657.jpg" width="210" />
-  <img src="image/IMG_1662.jpg" width="210" />
-  <img src="image/IMG_1713.jpg" width="210" />
-     <img src="ssass.png" width="300" />
+<div align="center">
+  <img src="image/IMG_1664.jpg" style="width:210px; height:210px; object-fit:cover;" />
+  <img src="image/IMG_1657.jpg" style="width:210px; height:210px; object-fit:cover;" />
+  <img src="image/IMG_1662.jpg" style="width:210px; height:210px; object-fit:cover;" />
+  <img src="image/IMG_1713.jpg" style="width:210px; height:210px; object-fit:cover;" />
+</div>
+
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="ssass.png" width="300" />
-  <img src="image/installation_2.jpg" width="300" />
-  <img src="image/installation_3.jpg" width="300" />
+  <img src="image/ssass.png" width="500" />
 </div>
 
 ---
