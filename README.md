@@ -12,12 +12,12 @@
 [![Status](https://img.shields.io/badge/Status-Active%20Developing-green)](#)
 
 🎬 **소개 영상(YouTube)**: https://youtu.be/G521t-9eQb0  
-📄 **전시 매뉴얼(PDF)**: `캡스톤1_매뉴얼(케렌시아).pdf` *(repo에 포함 권장)*
+📄 **전시 매뉴얼(PDF)**: `Project Proposal.pdf`
 
 <br/>
 
-<img src="assets/banner.png" width="900" alt="Wear Lab banner" />
-<!-- 배너 이미지 없으면 위 줄 삭제해도 됨 -->
+<img src="image/banner.png" width="900" alt="Wear Lab banner" />
+
 
 </div>
 
@@ -44,13 +44,11 @@
 ---
 
 ## 🖼️ 스크린샷 / 전시 사진
-> 아래 이미지는 예시 경로입니다. `assets/`에 이미지 넣고 경로만 맞춰주세요.
-
 <div align="center">
-  <img src="assets/IMG_1664.jpg" width="330" />
-  <img src="assets/IMG_1657.jpg" width="210" />
-  <img src="assets/IMG_1662.jpg" width="210" />
-  <img src="assets/IMG_1713.jpg" width="210" />
+  <img src="image/IMG_1664.jpg" width="330" />
+  <img src="image/IMG_1657.jpg" width="210" />
+  <img src="image/IMG_1662.jpg" width="210" />
+  <img src="image/IMG_1713.jpg" width="210" />
      <img src="ssass.png" width="300" />
 </div>
 
@@ -58,8 +56,8 @@
 
 <div align="center">
   <img src="ssass.png" width="300" />
-  <img src="assets/installation_2.jpg" width="300" />
-  <img src="assets/installation_3.jpg" width="300" />
+  <img src="image/installation_2.jpg" width="300" />
+  <img src="image/installation_3.jpg" width="300" />
 </div>
 
 ---
@@ -70,18 +68,16 @@
 AR 신발 착화 기능은 **Snap Lens Studio**에서 제공하는 **Foot Tracking 모델**을 기반으로 구현하였습니다. 본 작품에서는 별도의 신체 인식 모델을 직접 학습하기보다는, 실제 전시 환경에서의 안정성과 실시간 반응성을 우선적으로 고려하여 검증된 트래킹 모델을 활용하였습니다.
 
 <div align="center">
-  <img src="assets/스크린샷 2025-12-18 185631.png" width="530" />
-  <img src="assets/스크린샷 2025-12-18 192152.png" width="410" />
+  <img src="image/스크린샷 2025-12-18 185631.png" width="530" />
+  <img src="image/스크린샷 2025-12-18 192152.png" width="410" />
 </div>
 
  **Lens Studio의 Foot Tracking 기능**은 카메라 입력을 통해 사용자의 발 위치와 방향을 실시간으로 추적하며, 이를 기준으로 3D 신발 모델을 화면 상의 발에 자연스럽게 정렬합니다. 이를 통해 관람자는 별도의 마커나 추가 장비 없이도 AR 신발 착화 체험을 즉각적으로 수행할 수 있습니다. 본 작품에서는 이 트래킹 결과에 **아디다스 삼바 3D 모델**을 연동하여, 발 움직임에 따라 신발이 함께 반응하도록 구성하였습니다.
 
 <div align="center">
-  <img src="assets/스크린샷 2025-12-18 183315.png" width="430" />
-  <img src="assets/스크린샷 2025-12-18 183742.png" width="430" />
+  <img src="image/스크린샷 2025-12-18 183315.png" width="430" />
+  <img src="image/스크린샷 2025-12-18 183742.png" width="430" />
 </div>
 
   또한 본 시스템은 PC 환경에서의 전시 운영을 고려하여 Snap Camera Kit Web SDK 기반 환경에 최적화되었으며, 웹캠을 활용한 실시간 트래킹이 안정적으로 이루어지도록 구성하였습니다. 이를 통해 전시 공간에서도 반복적인 체험과 장시간 운영이 가능한 AR 착화 환경을 구현하였습니다.
-
-  > 신발 마모도 측정 및 색상 기반 신발 추천 알고리즘 구현
 
