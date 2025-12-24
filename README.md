@@ -1,4 +1,3 @@
-<img width="781" height="677" alt="캐릭터" src="https://github.com/user-attachments/assets/0a31fb96-8301-4a84-a6b5-b03b1f42286d" /><!-- =========================
      Kerencia / Wear Lab README
      ========================= -->
 
@@ -16,7 +15,7 @@
 
 <br/>
 
-<img src="image/banner.png" width="100"/>
+<img width="200" alt="캐릭터" src="https://github.com/user-attachments/assets/0a31fb96-8301-4a84-a6b5-b03b1f42286d" /><!-- =========================
 
 
 </div>
