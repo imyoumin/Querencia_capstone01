@@ -1,7 +1,4 @@
-     Kerencia / Wear Lab README
-     ========================= -->
 
-<div align="center">
 
 # 👟 Wear Lab — 신발 마모도 체험 + AR 착화 전시
 **Capstone Design 1 | Team Kerencia (케렌시아)**
@@ -15,7 +12,9 @@
 
 <br/>
 
-<img width="200" alt="캐릭터" src="https://github.com/user-attachments/assets/0a31fb96-8301-4a84-a6b5-b03b1f42286d" /><!-- =========================
+<p align="center">
+  <img width="200" alt="캐릭터" src="https://github.com/user-attachments/assets/0a31fb96-8301-4a84-a6b5-b03b1f42286d" />
+</p>
 
 
 </div>
