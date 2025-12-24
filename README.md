@@ -70,8 +70,8 @@
 AR 신발 착화 기능은 **Snap Lens Studio**에서 제공하는 **Foot Tracking 모델**을 기반으로 구현하였습니다. 본 작품에서는 별도의 신체 인식 모델을 직접 학습하기보다는, 실제 전시 환경에서의 안정성과 실시간 반응성을 우선적으로 고려하여 검증된 트래킹 모델을 활용하였습니다.
 
 <div align="center">
-  <img src="assets/스크린샷 2025-12-18 185631.png" width="330" />
-  <img src="assets/스크린샷 2025-12-18 192152.png" width="210" />
+  <img src="assets/스크린샷 2025-12-18 185631.png" width="430" />
+  <img src="assets/스크린샷 2025-12-18 192152.png" width="310" />
 </div>
 
 
