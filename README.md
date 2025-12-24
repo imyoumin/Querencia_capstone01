@@ -46,10 +46,30 @@
 ---
 
 ## 🎥 프로토타입 시연 영상 (Prototype Demo Videos)
-> GitHub README는 환경에 따라 mp4 인라인 재생이 제한될 수 있어, 아래처럼 **파일 링크**로 제공합니다.
+<div align="center">
 
-- **Prototype v1**: <a href="image/3-1프로토타입ver1%20시연영상.mp4">3-1프로토타입ver1 시연영상.mp4</a>  
-- **Prototype v2**: <a href="image/3-2프로토타입ver2시연영상.mp4">3-2프로토타입ver2시연영상.mp4</a>
+<details>
+  <summary><b>Prototype v1 — 3-1프로토타입ver1 시연영상.mp4 (Click to open)</b></summary>
+  <br/>
+  <video controls width="720" src="image/3-1프로토타입ver1%20시연영상.mp4"></video>
+  <p><a href="image/3-1프로토타입ver1%20시연영상.mp4">영상 파일로 열기</a></p>
+</details>
+
+<br/>
+
+<details>
+  <summary><b>Prototype v2 — 3-2프로토타입ver2시연영상.mp4 (Click to open)</b></summary>
+  <br/>
+  <video controls width="720" src="image/3-2프로토타입ver2시연영상.mp4"></video>
+  <p><a href="image/3-2프로토타입ver2시연영상.mp4">영상 파일로 열기</a></p>
+</details>
+
+</div>
+
+<blockquote>
+※ GitHub README에서는 환경에 따라 <code>&lt;video&gt;</code> 인라인 재생이 제한될 수 있습니다.  
+재생이 안 될 경우 위의 <b>“영상 파일로 열기”</b> 링크로 확인해주세요.
+</blockquote>
 
 ---
 
