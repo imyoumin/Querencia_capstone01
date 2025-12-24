@@ -8,7 +8,8 @@
 [![Status](https://img.shields.io/badge/Status-Active%20Developing-green)](#)
 
 🎬 **소개 영상(YouTube)**: https://youtu.be/G521t-9eQb0  
-📄 **전시 매뉴얼(PDF)**: `Project Proposal.pdf`
+📄 **전시 매뉴얼(PDF)**: `Project Proposal.pdf`  
+🗂️ **회의록 아카이빙(Notion)**: https://www.notion.so/26702f343e7e8025a504df4d94ab0ac5  
 
 <br/>
 
@@ -35,6 +36,32 @@
 - **STEP 5 — 선택 및 구매 연결 (QR)**  
 
 > 위 흐름은 팀 케렌시아 매뉴얼의 Step 구성과 동일합니다.
+
+---
+
+## 🗂️ 회의록 아카이빙 (Meeting Archive)
+프로젝트의 회의 기록 및 진행 아카이빙은 아래 Notion 페이지에서 확인할 수 있습니다.  
+👉 https://www.notion.so/26702f343e7e8025a504df4d94ab0ac5
+
+---
+
+## 🎥 프로토타입 시연 영상 (Prototype Demo Videos)
+
+<div align="center">
+  <video src="image/3-1프로토타입ver1 시연영상.mp4" controls width="720"></video>
+  <br/><br/>
+  <video src="image/3-2프로토타입ver2시연영상.mp4" controls width="720"></video>
+</div>
+
+<p>
+<b>Prototype v1</b>: <code>image/3-1프로토타입ver1 시연영상.mp4</code><br/>
+<b>Prototype v2</b>: <code>image/3-2프로토타입ver2시연영상.mp4</code>
+</p>
+
+<blockquote>
+※ GitHub README에서는 브라우저/플랫폼에 따라 video 태그가 정상 재생되지 않을 수 있습니다.  
+그 경우 <code>image/</code> 폴더에서 영상을 직접 다운로드하여 확인해주세요.
+</blockquote>
 
 ---
 
@@ -80,7 +107,7 @@ AR 신발 착화 기능은 **Snap Lens Studio**에서 제공하는 **Foot Tracki
 <pre><code>Querencia_capstone01/
 ├─ ar_wrapper/                 # AR 착화 웹 (Adidas Samba 6종 모델 착화)
 ├─ shoe_wear_exhibition/       # 마모도 측정 FastAPI 서버 (GroundingDINO + SAM 전처리 + 마모도 모델 추론)
-├─ image/                      # README용 이미지/스크린샷
+├─ image/                      # README용 이미지/스크린샷/프로토타입 시연영상
 ├─ Project Proposal.pdf        # 프로젝트 제안서
 ├─ Project Manual.pdf          # 프로젝트 매뉴얼
 ├─ Final Project Report.pdf    # 프로젝트 최종 보고서
