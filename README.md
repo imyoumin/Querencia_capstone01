@@ -71,7 +71,7 @@ AR 신발 착화 기능은 **Snap Lens Studio**에서 제공하는 **Foot Tracki
 
 <div align="center">
   <img src="assets/스크린샷 2025-12-18 185631.png" width="530" />
-  <img src="assets/스크린샷 2025-12-18 192152.png" width="410" />
+  <img src="assets/스크린샷 2025-12-18 192152.png" width="510" />
 </div>
 
 
