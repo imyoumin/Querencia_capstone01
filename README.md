@@ -16,7 +16,7 @@
 
 <br/>
 
-<img src="image/banner.png" width="900" alt="Wear Lab banner" />
+<img src="image/banner.png" width="100"/>
 
 
 </div>
@@ -46,9 +46,9 @@
 ## 🖼️ 스크린샷 / 전시 사진
 <div align="center">
 <div align="center">
-  <img src="image/IMG_1664.jpg" style="width:210px; height:210px; object-fit:cover;" />
-  <img src="image/IMG_1657.jpg" style="width:210px; height:210px; object-fit:cover;" />
-  <img src="image/IMG_1662.jpg" style="width:210px; height:210px; object-fit:cover;" />
+  <img src="image/IMG_1664.jpg" style="width:170px; height:210px; object-fit:cover;" />
+  <img src="image/IMG_1657.jpg" style="width:170px; height:210px; object-fit:cover;" />
+  <img src="image/IMG_1662.jpg" style="width:170px; height:210px; object-fit:cover;" />
   <img src="image/IMG_1713.jpg" style="width:210px; height:210px; object-fit:cover;" />
 </div>
 
