@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wear Lab - AI 추천</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="brand-mark">
+                <span class="brand-name">Wear Lab Analysis</span>
+            </div>
+        </header>
+
+        <div class="card">
+            <div id="arControlView" class="view-section active" style="display: flex;">
+                
+                <div class="badge-container">
+                    <h2 class="recommend-title">
+                        <span class="highlight">AI</span>가 추천하는<br>
+                        어울리는 신발
+                    </h2>
+                </div>
+
+                <div class="shoe-display-area">
+                    <img id="shoeImageDisplay" src="" alt="Shoe Image" class="shoe-img-main">
+                </div>
+
+                <div class="control-group">
+                    <h2 id="shoeNameDisplay" class="shoe-name">Loading...</h2>
+                    
+                    <div class="selector-area">
+                        <button class="nav-btn" id="prevBtn">❮</button>
+                        <button class="buy-btn" id="buyBtn">이거 어때요? ❤️</button>
+                        <button class="nav-btn" id="nextBtn">❯</button>
+                    </div>
+
+                    <p class="guide-text">
+                        화면을 보며 다른 디자인도 확인해보세요
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <button id="retryBtn" class="btn btn-secondary footer-btn">
+            처음으로 돌아가기
+        </button>
+    </div>
+
+    <div id="qrModal" class="modal-overlay">
+        <div class="modal-card">
+            <h3 class="modal-title">구매 페이지로 이동</h3>
+            <p class="modal-desc">
+                아래 QR코드를 스마트폰으로 스캔하여<br>상세 정보를 확인하세요.
+            </p>
+            <div class="qr-box">
+                <img id="qrImage" src="" alt="QR Code" style="width: 200px; height: 200px; object-fit: contain;">
+            </div>
+            <br>
+            <button id="closeQrBtn" class="btn btn-secondary" style="width: auto; padding: 0 40px; margin-top: 20px;">닫기</button>
+        </div>
+    </div>
+
+    <script src="/static/js/recommend.js"></script>
+</body>
+</html>

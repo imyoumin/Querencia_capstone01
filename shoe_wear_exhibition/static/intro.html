@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wear Lab - 시작하기</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="intro-container">
+            
+            <div id="slide1" class="intro-slide active">
+                <div class="visual-area">
+                    <img src="/static/images/캐릭터.png" alt="Character" class="intro-img">
+                </div>
+                <h1 class="intro-title">반갑습니다<br>Wear Lab 입니다</h1>
+                <p class="intro-desc">내 신발의 수명을<br>과학적으로 측정해보세요.</p>
+            </div>
+
+            <div id="slide2" class="intro-slide">
+                <div class="visual-area">
+                    <span class="intro-emoji">📷</span>
+                </div>
+                <h1 class="intro-title">간편한 촬영</h1>
+                <p class="intro-desc">신발을 화면에 맞추고<br>촬영 버튼만 누르면 끝.</p>
+            </div>
+
+            <div id="slide3" class="intro-slide">
+                <div class="visual-area">
+                    <span class="intro-emoji">🚀</span>
+                </div>
+                <h1 class="intro-title">지금 시작하세요</h1>
+                <p class="intro-desc">당신의 신발은<br>안녕하신가요?</p>
+            </div>
+        </div>
+
+        <div class="btn-area">
+            <button id="nextBtn" class="btn btn-secondary">다음</button>
+            <button id="startBtn" class="btn btn-primary" onclick="goToAnalysis()" style="display: none;">측정 시작하기</button>
+        </div>
+    </div>
+
+    <script src="/static/js/intro.js"></script>
+</body>
+</html>

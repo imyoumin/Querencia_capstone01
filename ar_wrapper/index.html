@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>AR Mirror Display</title>
+  <style>
+    /* 기본 설정: 꽉 찬 화면, 스크롤 방지 */
+    html, body {
+      margin: 0; padding: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: "Pretendard", system-ui, -apple-system, sans-serif;
+    }
+
+    /* 1. AR Iframe (실제 컨텐츠) */
+    #arFrame {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      border: none;
+      z-index: 1;
+    }
+
+    /* 2. 대기 화면 (가림막) */
+    #blocker {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    #blocker h1 {
+      color: #fff;
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    #blocker p { color: #888; font-size: 1.2rem; }
+
+    .loader {
+      width: 50px; height: 50px;
+      border: 4px solid #333;
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 30px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* =========================================
+       3. [수정됨] 상단 색상 인디케이터 (위치 상향 조정)
+       ========================================= */
+    #colorDots {
+      position: absolute;
+      /* [여기 수정함] 15px -> 5px 로 변경하여 더 위로 올림 */
+      top: 10px; 
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      opacity: 0.5;
+      border: 1px solid rgba(255,255,255,0.3); 
+    }
+
+    /* 선택된 점 스타일 */
+    .dot.active {
+      transform: scale(1.5);
+      opacity: 1;
+      border: 1.5px solid #fff;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    }
+
+    /* 각 색상 정의 */
+    .dot[data-color="Red"]       { background-color: #e74c3c; }
+    .dot[data-color="Green"]     { background-color: #27ae60; }
+    .dot[data-color="Blue"]      { background-color: #3498db; }
+    .dot[data-color="Navy"]      { background-color: #1a2550; }
+    .dot[data-color="Aluminium"] { background-color: #bdc3c7; }
+    .dot[data-color="Black"]     { background-color: #2c3e50; }
+
+  </style>
+</head>
+<body>
+
+  <iframe id="arFrame" src="./Red/index.html" allow="camera; microphone"></iframe>
+
+  <div id="colorDots">
+    <div class="dot active" data-color="Red"></div>
+    <div class="dot" data-color="Green"></div>
+    <div class="dot" data-color="Blue"></div>
+    <div class="dot" data-color="Navy"></div>
+    <div class="dot" data-color="Aluminium"></div>
+    <div class="dot" data-color="Black"></div>
+  </div>
+
+  <div id="blocker">
+    <div class="loader"></div>
+    <h1>Ready to Wear</h1>
+    <p>분석이 완료되면 화면이 켜집니다.</p>
+  </div>
+
+  <video id="captureVideo" autoplay playsinline style="display:none;"></video>
+  <canvas id="captureCanvas" style="display:none;"></canvas>
+
+  <script>
+    const SERVER_URL = "http://127.0.0.1:8000"; 
+
+    const iframe = document.getElementById('arFrame');
+    const blocker = document.getElementById('blocker');
+    const dots = document.querySelectorAll('.dot'); 
+    
+    const video = document.getElementById('captureVideo');
+    const canvas = document.getElementById('captureCanvas');
+
+    let currentShoeKey = "Red"; 
+    let lastUnlocked = false; 
+    let isIdentifying = false;
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => { video.srcObject = stream; })
+      .catch(err => console.error("Wrapper Camera Error:", err));
+
+    // 점 업데이트 함수
+    function updateDots(activeKey) {
+      dots.forEach(dot => {
+        if (dot.dataset.color === activeKey) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    async function identifyAndSyncShoe() {
+      if (!video.videoWidth) return;
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      canvas.getContext('2d').drawImage(video, 0, 0);
+
+      canvas.toBlob(async (blob) => {
+        const formData = new FormData();
+        formData.append('file', blob, 'check.jpg');
+
+        try {
+          const res = await fetch(`${SERVER_URL}/identify_shoe`, { method: 'POST', body: formData });
+          const data = await res.json();
+
+          if (data.success && data.dist_key) {
+            console.log(`[Wrapper] Detected Shoe: ${data.dist_key}`);
+            await fetch(`${SERVER_URL}/set_shoe/${data.dist_key}`, { method: 'POST' });
+            updateIframe(data.dist_key);
+          }
+        } catch (e) { console.error("Identify Failed:", e); }
+      }, 'image/jpeg');
+    }
+
+    function updateIframe(key) {
+      if (currentShoeKey !== key) {
+        console.log(`[Wrapper] Change View: ${currentShoeKey} -> ${key}`);
+        currentShoeKey = key;
+        iframe.src = `./${key}/index.html`;
+        updateDots(key);
+      }
+    }
+
+    setInterval(async () => {
+      try {
+        const statusRes = await fetch(`${SERVER_URL}/ar_status`);
+        const statusData = await statusRes.json();
+        const unlocked = statusData.unlocked === true;
+
+        if (unlocked && !lastUnlocked) {
+          blocker.style.opacity = 0;
+          setTimeout(() => { blocker.style.display = 'none'; }, 800);
+          if (!isIdentifying) {
+            isIdentifying = true;
+            await identifyAndSyncShoe();
+            isIdentifying = false;
+          }
+        }
+
+        if (!unlocked && lastUnlocked) {
+          blocker.style.display = 'flex';
+          setTimeout(() => { blocker.style.opacity = 1; }, 10);
+        }
+        
+        lastUnlocked = unlocked;
+
+        if (unlocked) {
+            const shoeRes = await fetch(`${SERVER_URL}/get_shoe`);
+            const shoeData = await shoeRes.json();
+            
+            if (shoeData.shoe) {
+                updateIframe(shoeData.shoe);
+            }
+        }
+      } catch (e) { console.error("Polling Error:", e); }
+    }, 500);
+
+  </script>
+</body>
+</html>

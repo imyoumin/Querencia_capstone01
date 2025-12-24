@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wear Lab - 분석 결과</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="brand-mark">
+                <span class="brand-name">Wear Lab Analysis</span>
+            </div>
+        </header>
+
+        <div class="card card-result">
+            
+            <div id="resultView" class="view-section active">
+                <div class="chart-container">
+                    <div class="donut-chart" id="donutChart">
+                        <div class="donut-inner">
+                            <span class="score-text" id="scoreValue">0</span>
+                            <span class="score-unit">마모 지수</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-area" id="statusArea">
+                    <span class="status-emoji">🤔</span>
+                    <h2 class="status-title">분석 중...</h2>
+                    <p class="status-desc">결과를 계산하고 있습니다.</p>
+                </div>
+                
+                <hr style="border: 0; border-top: 2px solid #f0f0f0; margin: 30px 0; width: 100%;">
+
+                <div id="arSection" class="ar-suggestion">
+                    
+                    <div id="arIntroView">
+                        <p class="suggestion-text">
+                            "신발이 조금 지쳐 보이네요.<br>
+                            <span class="suggestion-highlight">AI가 추천하는 새 신발</span>을 신어보시겠어요?"
+                        </p>
+                        <button id="arBtn" class="btn btn-primary">
+                            네, 신어볼게요 (AR ON) ✨
+                        </button>
+                    </div>
+
+                    <div id="arLoadingView" style="display: none; flex-direction: column; align-items: center; justify-content: center; padding: 40px 0;">
+                        <div class="spinner"></div>
+                        <h3 style="font-size: 32px; font-weight: 800; margin-bottom: 15px; margin-top: 20px;">AR 쇼룸 준비 중...</h3>
+                        <p style="font-size: 24px; color: #888;">가림막이 열리고 있습니다.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <button id="retryBtn" class="btn btn-secondary footer-btn">
+            처음으로 돌아가기
+        </button>
+    </div>
+
+    <script src="/static/js/result.js"></script>
+</body>
+</html>

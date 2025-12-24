@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>foot-tracking</title>
+
+    <!-- ✔ 웹폰트 선언 -->
+    <style>
+      @font-face {
+        font-family: 'Blern';
+        src: url('Black/assets/Blern-regular-B0Aiz4eE.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /* ✔ 사방 여백 값을 한 번에 조정하는 변수 */
+      :root {
+        --margin: 30px;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: black;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      /* 전체를 flex 중앙 배치 */
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      /* 캔버스 */
+      #canvas {
+        width: calc(100vw - (var(--margin) * 2));
+        height: calc(100vh - (var(--margin) * 2));
+        margin: var(--margin);
+        background: black;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+      }
+
+      /* 그룹: 아이콘 + KERENCIA 텍스트 */
+      #teamBox {
+        position: absolute;
+        bottom: calc(var(--margin) / 2);
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        pointer-events: none;
+      }
+
+      /* 📌 아이콘 개별 위치 미세 조정 가능 */
+      #teamIcon {
+        width: 20px;
+        height: auto;
+        opacity: 0.95;
+
+        position: relative;  /* ← 이걸로 이동 가능 */
+
+        /* ⬇⬇⬇ 원하는 대로 수정하면 됨 ⬇⬇⬇ */
+        top: 8px;       /* +값 = 아래로, -값 = 위로 이동 */
+        left: 3px;      /* +값 = 오른쪽, -값 = 왼쪽 이동 */
+        /* bottom, right 도 가능 */
+}
+
+
+      /* 팀명 색상 완전 흰색으로 변경 */
+      #teamName {
+        color: #f2f2f2;
+        font-size: 15px;              /* 글자 크기 */
+        line-height: -3px;            /* ← 글자 높이(세로 간격) 직접 조절 가능 */
+        font-family: 'Blern', sans-serif;
+        font-weight: 10;
+        letter-spacing: 2px;
+
+        position: relative;           /* ← 위치 조절 가능 */
+        top: 7px;                     /* ← 글자를 위/아래로 이동 (원하는 값 넣으면 됨) */
+        /* bottom도 사용 가능 */
+      }
+
+
+    </style>
+    <script type="module" crossorigin src="Black/assets/index-UbAYPLbN.js"></script>
+  </head>
+
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <!-- ⭐ 아이콘 + 팀명이 함께 들어가는 박스 -->
+    <div id="teamBox">
+      <img id="teamIcon" src="Black/assets/%EC%BC%80%EB%A0%8C%EC%8B%9C%EC%95%84-Photoroom-Dk4R5VfN.png" alt="KERENCIA Icon" />
+      <span id="teamName">KERENCIA</span>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wear Lab - 촬영</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="brand-mark">
+                <span class="brand-name">Wear Lab Analysis</span>
+            </div>
+        </header>
+
+        <div class="card">
+            <h2 class="card-title">신발 촬영</h2>
+            
+            <p class="guide-text">
+                가이드 라인 안에 신발을 맞추고<br>촬영 버튼을 눌러주세요.
+            </p>
+            
+            <div class="camera-frame">
+                <video id="video" autoplay playsinline muted></video>
+                
+                <div class="scan-line"></div>
+                <div class="camera-guide">
+                    <div class="camera-guide-inner"></div>
+                </div>
+            </div>
+            
+            <button id="captureBtn" class="btn btn-primary">
+                촬영 및 분석하기
+            </button>
+        </div>
+    </div>
+
+    <div id="loadingOverlay">
+        <div class="spinner"></div>
+        <h3 class="loading-title">AI 분석 중</h3>
+        <p id="loadingText" class="loading-steps">이미지 처리 중...</p>
+    </div>
+
+    <div id="flash" class="flash-effect"></div>
+
+    <div id="errorModal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-icon">💣</div>
+            <h3 class="modal-title">분석에 실패했어요</h3>
+            <p id="errorDesc" class="modal-desc">
+                이미지를 인식하지 못했습니다.<br>
+                다시 촬영해주시겠어요?
+            </p>
+            <button id="closeErrorBtn" class="btn btn-primary">
+                다시 시도하기
+            </button>
+        </div>
+    </div>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script src="/static/js/analysis.js"></script>
+</body>
+</html>

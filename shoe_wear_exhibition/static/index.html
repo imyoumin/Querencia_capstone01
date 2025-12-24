@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wear Lab - 분석 결과</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="brand-mark">
+                <span class="brand-name">Wear Lab Analysis</span>
+            </div>
+        </header>
+
+        <div class="card card-result">
+            
+            <div id="resultView" class="view-section active">
+                <div class="chart-container">
+                    <div class="donut-chart" id="donutChart">
+                        <div class="donut-inner">
+                            <span class="score-text" id="scoreValue">0</span>
+                            <span class="score-unit">마모 지수</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-area">
+                    <span class="status-emoji">🤔</span>
+                    <h2 class="status-title">분석 중...</h2>
+                    <p class="status-desc">결과를 계산하고 있습니다.</p>
+                </div>
+                
+                <div id="arSuggestion" class="ar-suggestion">
+                    <p class="suggestion-text">
+                        "신발이 조금 지쳐 보이네요.<br>
+                        <span class="suggestion-highlight">AI가 추천하는 새 신발</span>을 신어보시겠어요?"
+                    </p>
+                    <button id="arBtn" class="btn btn-primary">
+                        네, 신어볼게요 (AR ON) ✨
+                    </button>
+                </div>
+            </div>
+
+            <div id="arLoadingView" class="view-section" style="display: none; justify-content: center;">
+                <div class="spinner"></div>
+                <h3 style="font-size: 36px; font-weight: 800; margin-bottom: 20px;">AI 스타일 매칭 중...</h3>
+                <p style="font-size: 26px; color: #888;">고객님의 취향을 분석하고 있습니다.</p>
+            </div>
+
+            <div id="arControlView" class="view-section" style="display: none;">
+                
+                <div class="badge-container">
+                    <div class="recommend-badge">AI RECOMMENDS</div>
+                </div>
+
+                <div class="shoe-display-area">
+                    <img id="shoeImageDisplay" src="" alt="Shoe Image" class="shoe-img-main">
+                </div>
+
+                <div class="control-group">
+                    <h2 id="shoeNameDisplay" class="shoe-name">Pure White</h2>
+                    
+                    <div class="selector-area">
+                        <button class="nav-btn" id="prevBtn">❮</button>
+                        <button class="buy-btn" id="buyBtn">이거 어때요? ❤️</button>
+                        <button class="nav-btn" id="nextBtn">❯</button>
+                    </div>
+
+                    <p class="guide-text">
+                        화면을 보며 다른 디자인도 확인해보세요
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <button id="retryBtn" class="btn btn-secondary footer-btn">
+            처음으로 돌아가기
+        </button>
+    </div>
+
+    <div id="qrModal" class="modal-overlay">
+        <div class="modal-card">
+            <h3 class="modal-title">구매 페이지로 이동</h3>
+            <p class="modal-desc">
+                아래 QR코드를 스마트폰으로 스캔하여<br>상세 정보를 확인하세요.
+            </p>
+            <div class="qr-box">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://example.com/buy" alt="QR Code">
+            </div>
+            <button id="closeQrBtn" class="btn btn-secondary" style="margin-top: 30px;">닫기</button>
+        </div>
+    </div>
+
+    <script src="/static/js/result.js"></script>
+    
+    <script>
+        // (참고용) 실제로는 result.js에 있어야 할 로직입니다.
+        const arBtn = document.getElementById('arBtn');
+        const resultView = document.getElementById('resultView');
+        const arLoadingView = document.getElementById('arLoadingView');
+        const arControlView = document.getElementById('arControlView');
+        const retryBtn = document.getElementById('retryBtn');
+
+        // 예시 데이터
+        const shoes = [
+            { name: "Pure White", img: "https://via.placeholder.com/600x400/transparent/111?text=Pure+White+Shoe" }, // 투명 이미지가 좋음
+            { name: "Urban Black", img: "https://via.placeholder.com/600x400/transparent/111?text=Black+Shoe" }
+        ];
+
+        arBtn.addEventListener('click', () => {
+            // 1. 결과 화면 숨김
+            resultView.style.display = 'none';
+            retryBtn.style.display = 'none'; // 몰입을 위해 하단 버튼 숨김 (선택사항)
+            
+            // 2. 로딩 표시
+            arLoadingView.style.display = 'flex';
+
+            // 3. 1.5초 후 AR 화면 표시
+            setTimeout(() => {
+                arLoadingView.style.display = 'none';
+                arControlView.style.display = 'flex';
+                // 첫번째 신발 로드 (테스트용)
+                document.getElementById('shoeImageDisplay').src = shoes[0].img; 
+                document.getElementById('shoeNameDisplay').innerText = shoes[0].name;
+                retryBtn.style.display = 'flex'; // 다시 표시
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

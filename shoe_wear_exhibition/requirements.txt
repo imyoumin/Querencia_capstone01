@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+transformers
+torch
+Pillow
+numpy
+safetensors
+accelerate
+python-multipart
+numpy
+rembg
