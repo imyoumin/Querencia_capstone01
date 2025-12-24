@@ -47,16 +47,17 @@
 > 아래 이미지는 예시 경로입니다. `assets/`에 이미지 넣고 경로만 맞춰주세요.
 
 <div align="center">
-  <img src="assets/step1.png" width="210" />
-  <img src="assets/step2.png" width="210" />
-  <img src="assets/step3.png" width="210" />
-  <img src="assets/step4.png" width="210" />
+  <img src="assets/IMG_1664.jpg" width="210" />
+  <img src="assets/IMG_1657.jpg" width="210" />
+  <img src="assets/IMG_1662.jpg" width="210" />
+  <img src="assets/IMG_1713.jpg" width="210" />
+     
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="assets/installation_1.jpg" width="300" />
+  <img src="ssass.png" width="300" />
   <img src="assets/installation_2.jpg" width="300" />
   <img src="assets/installation_3.jpg" width="300" />
 </div>
