@@ -97,12 +97,13 @@ AR 신발 착화 기능은 **Snap Lens Studio**에서 제공하는 **Foot Tracki
 <h2>📁 디렉터리 구조 (Directory Structure)</h2>
 
 <pre><code>Querencia_capstone01/
-├─ ar_wrapper/                 # AR 착화 웹 (Adidas Samba 6종 모델 착화)
-├─ shoe_wear_exhibition/       # 마모도 측정 FastAPI 서버 (GroundingDINO + SAM 전처리 + 마모도 모델 추론)
-├─ image/                      # README용 이미지/스크린샷/프로토타입 영상
-├─ Project Proposal.pdf        # 프로젝트 제안서
-├─ Project Manual.pdf          # 프로젝트 매뉴얼
-├─ Final Project Report.pdf    # 프로젝트 최종 보고서
+├─ ar_wrapper/                   # AR 착화 웹 (Adidas Samba 6종 모델 착화)
+├─ shoe_wear_exhibition/         # 마모도 측정 FastAPI 서버 (GroundingDINO + SAM 전처리 + 마모도 모델 추론)
+├─ image/                        # README용 이미지/스크린샷/프로토타입 영상
+├─ shoe_wear_project_traincode/  # 마모도 측정 모델 훈련 코드
+├─ Project Proposal.pdf          # 프로젝트 제안서
+├─ Project Manual.pdf            # 프로젝트 매뉴얼
+├─ Final Project Report.pdf      # 프로젝트 최종 보고서
 └─ README.md</code></pre>
 
 ---
@@ -160,3 +161,6 @@ python app.py</code></pre>
 npx serve .</code></pre>
 
 <p>두 서버가 같은 PC의 로컬 환경에서 동시에 동작하며, <b>AR 착화 체험</b>과 <b>마모도 측정/결과 표시</b>가 전시 흐름에 맞게 연동됩니다.</p>
+
+### 🚀 모델 다운로드
+[마모도 측정 모델 (.pt) 다운로드하기](https://drive.google.com/uc?export=download&id=13ddxJClANwT_blQSGp-WYrxhK9t5-Hhl)
