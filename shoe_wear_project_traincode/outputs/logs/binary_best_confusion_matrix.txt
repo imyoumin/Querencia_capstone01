@@ -1,0 +1,10 @@
+Confusion Matrix:
+[[46  1]
+ [ 5 47]]
+
+Additional Info:
+{
+  "epoch": 1,
+  "val_loss": 0.17666359955352035,
+  "val_acc": 0.9393939393939394
+}
